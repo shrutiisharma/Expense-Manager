@@ -307,11 +307,27 @@ public class TransactionOperations {
             return;
         }
 
+        double totalIncome = 0;
+        double totalExpense = 0;
+        int noOfTransactions = 0;
+
         //printing all the transactions of the month serial wise
         System.out.println("    TYPE           DATE          AMOUNT            CATEGORY         NOTE(optional)");
         for (int i = 0; i < trans.size(); i++) {
             System.out.println((i + 1) + ". " + trans.get(i));
+
+            if (transactionsArrayList.get(i).type == 0)     totalIncome += transactionsArrayList.get(i).amount;
+            else if (transactionsArrayList.get(i).type == 1)     totalExpense += transactionsArrayList.get(i).amount;
+
+            noOfTransactions++;
         }
+
+        System.out.println();
+        System.out.println("Total Transactions = " + noOfTransactions);
+        System.out.println("Total Income = ₹" + totalIncome);
+        System.out.println("Total Spent = ₹" + totalExpense);
+        System.out.println("Saving = ₹(" + (totalIncome - totalExpense) + ")");
+        System.out.println();
 
     }
 }
