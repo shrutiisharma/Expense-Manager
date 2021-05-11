@@ -154,9 +154,9 @@ public class TransactionOperations {
 
                 //edit transaction type
                 else if (menuOption == 2) {
-                    System.out.print("Choose the Transaction Type:" +
-                            "1: Income" +
-                            "2: Expense");
+                    System.out.print("Choose the Transaction Type:\n" +
+                            "1: Income\n" +
+                            "2: Expense\n");
 
                     int newType = input.nextInt();
 
